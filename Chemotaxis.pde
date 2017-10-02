@@ -14,6 +14,7 @@ void draw()
   background(0);
   for (int i = 0; i < colony.length; i++) {
       colony[i].show();
+      colony[i].move();
   }
 
   //move and show the bacteria
@@ -24,8 +25,8 @@ class Bacteria
   int myX, myY, myColor;
   Bacteria()
   {
-    myX = (int)(Math.random()*30);
-    myY = (int)(Math.random()*30);
+    myX = (int)(Math.random()*300);
+    myY = (int)(Math.random()*300);
     myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   }
   void show() {
@@ -33,7 +34,10 @@ class Bacteria
     ellipse(myX, myY, 10, 10);
   }    
   void move() {
-    myX= myX + (int)(Math.random()*5)-1;
-   myY= myY + (int)(Math.random()*250);
+    myX++;
+    myY++;
+   // myY++;
+    //myX= myX + (int)(Math.random()*250);
+    //myY= myY + (int)(Math.random()*250);
   }
 }
